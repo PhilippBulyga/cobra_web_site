@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "variables";
+@import "zeroing";
+@import "mixins";
+@import "header/header";
+
+.container{
+  max-width: 1290px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.mobileMenu{
+  left: 50% !important;
+}
+
+.button-primary__initial{
+  @include fullDisplayFlex(0px);
+  @include backgroundOptions(#5f2eea);
+  position: relative;
+  padding: 14px 32px;
+  text-align: center;
+  z-index: 2;
+  & span{
+    @include fontsStyles(400, 16px, 28px, #f7f7fc);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.75px;
+    z-index: 3;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    @include backgroundOptions(linear-gradient(114.44deg, #7433FF 0%, #FFA3FD 100%));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.6s linear;
+  }
+  &:hover::before{opacity: 1;}
+}
+
+@media screen and (max-width: 450px){
+  .container{padding-inline: 10px;}
+  .mobileMenu{left: 0 !important;}
+}

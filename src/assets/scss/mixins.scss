@@ -1,0 +1,38 @@
+@mixin fontsStyles ($fontWeight: 400, $fontSize: 13px, $lineHeight: 20px, $colorValue: #fff) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $colorValue;
+}
+
+@mixin displayFlex($flexGap: 32px, $alignItems: center) {
+  display: flex;
+  align-items: $alignItems;
+  gap: $flexGap;
+}
+
+@mixin fullDisplayFlex($flexGap: 32px, $justifyContent: center, $alignItems: center) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  gap: $flexGap;
+}
+
+@mixin absoluteFull($topValue: 0, $bottomValue: 0, $leftValue: 0, $rightValue: 0){
+  position: absolute;
+  top: $topValue;
+  bottom: $bottomValue;
+  left: $leftValue;
+  right: $rightValue;
+}
+
+@mixin centerContainer($maxWidth: 1290px, $paddingInline: 20px){
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 $paddingInline;
+}
+
+@mixin backgroundOptions($backgroundValue, $borderRadiusValue: 16px){
+  background: $backgroundValue;
+  border-radius: $borderRadiusValue;
+}
